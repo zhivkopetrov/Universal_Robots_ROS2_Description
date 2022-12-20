@@ -10,7 +10,8 @@ install(
 
 ament_export_dependencies(${THIS_PACKAGE_INCLUDE_DEPENDS})
 
-if(BUILD_TESTING)
+set(LOCAL_ENABLE_TESTING False)
+if(BUILD_TESTING AND ${LOCAL_ENABLE_TESTING})
   find_package(ament_cmake_pytest REQUIRED)
 
   ament_add_pytest_test(ur_urdf_xacro test/test_ur_urdf_xacro.py)
